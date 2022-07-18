@@ -1,0 +1,55 @@
+<section>
+    <h2>Profile Editor</h2>  
+</section>
+
+<div class="users">
+    
+
+    <div class="users" *ngIf = "!displayEdit">
+      <h2>User Information</h2>
+
+      <p>Name:  {{ user.name }}</p>
+      <p>Age: {{ user.age }}</p>
+      <p>Favorite Color:  {{ user.favoriteColor }}</p>
+    </div>
+    
+    <button type="button" class="btn btn-primary" (click)="toggleEdit()" *ngIf="!displayEdit">Toggle Edit</button>
+    
+    <div class="container" *ngIf="displayEdit">
+      <h2>Update User Information</h2>
+
+      <form #userForm="ngForm" (ngSubmit)="saveChanges(userForm)" novalidate>
+        
+        <div class="form-user">
+          <label class="input-label" for="name">Name:</label>
+          <input name="name" [(ngModel)]="user.name" required #name="ngModel" class="form-control" id="name">
+        </div>
+        <br>
+
+        <div class="form-user">
+          <label class="input-label" for="age">Age:</label>
+          <input name="age" [(ngModel)]="user.age" required #age="ngModel" class="form-control" id="age">
+        </div>
+        <br>
+
+        <div class="form-user">
+          <label class="input-label" for="favoriteColor">Favorite Color:</label>
+          <input name="favoriteColor"  [(ngModel)]="user.favoriteColor"  #favoriteColor="ngModel" class="form-control" id="favoriteColor">
+        </div>
+
+        <br>
+
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+
+      </form>
+      
+      <br>
+
+      <button type="button" class="btn btn-primary" (click)="toggleEdit()" *ngIf="displayEdit">Toggle Edit</button>
+
+    </div>
+
+    
+</div>
+
+  

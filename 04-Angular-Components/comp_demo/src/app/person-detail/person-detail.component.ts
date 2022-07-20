@@ -18,8 +18,8 @@ export class PersonDetailComponent implements OnInit {
 
   @Output() personDelete = new EventEmitter<void>();
 
-  currentFirst: string = '';
-  currentLast: string = '';
+  // currentFirst: string = '';
+  // currentLast: string = '';
 
   showEdit: boolean = false;
 
@@ -28,15 +28,25 @@ export class PersonDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // edit() {
+  //   this.currentFirst = this.fullName.firstName;
+  //   this.currentLast = this.fullName.lastName;
+  //   this.showEdit = true;
+  // }
+
   edit() {
-    this.currentFirst = this.fullName.firstName;
-    this.currentLast = this.fullName.lastName;
     this.showEdit = true;
   }
 
-  save() {
-    this.fullName.firstName = this.currentFirst;
-    this.fullName.lastName = this.currentLast;
+  // save() {
+  //   this.fullName.firstName = this.currentFirst;
+  //   this.fullName.lastName = this.currentLast;
+  //   this.showEdit = false;
+  // }
+
+  save(newPerson: Person) {
+    this.fullName.firstName = newPerson.firstName;
+    this.fullName.lastName = newPerson.lastName;
     this.showEdit = false;
   }
 

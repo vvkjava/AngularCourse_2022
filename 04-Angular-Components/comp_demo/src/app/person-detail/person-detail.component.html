@@ -7,9 +7,11 @@
 </div>
 
 <div *ngIf="showEdit">
-    Update My Name to  
+    <!-- Update My Name to  
     <input type="text" [(ngModel)]="currentFirst"/>
     <input type="text" [(ngModel)]="currentLast"/>
     <button (click)="save()">Save</button>
-    <button (click)="cancel()">Cancel</button>
+    <button (click)="cancel()">Cancel</button> -->
+
+    <app-person-form [startingValues]="fullName" (personSave)="save($event)" (formCancel)="cancel()"></app-person-form>
 </div>

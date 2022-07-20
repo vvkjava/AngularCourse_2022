@@ -7,9 +7,12 @@
 
 <app-person-detail *ngFor="let person of people; index as i" [fullName]="person" (personDelete)="deletePerson(i)"></app-person-detail>
 
-<h3>Add New Person</h3>
+<!-- <h3>Add New Person</h3>
 First Name: <input type="text" [(ngModel)]="newPerson.firstName"/><br/>
 Last Name: <input type="text" [(ngModel)]="newPerson.lastName" /><br/>
-<button (click)="addPerson()">Add</button>
+<button (click)="addPerson()">Add</button> -->
+
+<h3>Add New Person</h3>
+<app-person-form (personSave)="addPerson($event)"></app-person-form>
 
 </div>

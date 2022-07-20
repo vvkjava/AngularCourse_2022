@@ -13,5 +13,5 @@
     <button (click)="save()">Save</button>
     <button (click)="cancel()">Cancel</button> -->
 
-    <app-person-form [startingValues]="fullName" (personSave)="save($event)" (formCancel)="cancel()"></app-person-form>
+    <app-person-form [showCancel]="true" [startingValues]="fullName" (personSave)="save($event)" (formCancel)="cancel()"></app-person-form>
 </div>
